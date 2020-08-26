@@ -10,11 +10,11 @@ if( d < 0 )
 end
 
 sqrt = Math.sqrt(d)
-x1 = (-b + sqrt)/(2*a)
-x2 = (-b - sqrt)/(2*a)
 
 if( d > 0 )
   puts "Дискриминант: #{d}"
+  x1 = (-b + sqrt)/(2*a)
+  x2 = (-b - sqrt)/(2*a)
   puts "Корни: #{x1}, #{x2}"
 elsif( d == 0  )
   puts "Дискриминант: #{d}"
