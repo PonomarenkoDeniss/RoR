@@ -24,7 +24,6 @@ basket.each do |product_name, data|
   puts "Price:  #{data['price']}"
   puts "Amount: #{data['amount']}"
   puts "Price * amount:   #{p_price}"
-  
   puts '--------------------'
   total_price += p_price
 end
