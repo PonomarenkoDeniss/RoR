@@ -1,14 +1,9 @@
-alphabet = ("a".."z").to_a #letters array
-needed   =  'a,e,i,o,u,y'.split(",") # array of vowels
-letters  = Hash.new #create hash
-i = 0
+alphabet = ("a".."z").to_a 
+needed   =  'aeiouy'
+letters  = {} 
 
-#get letter number
-while i < alphabet.size
-  if needed.include?(alphabet[i])
-  	letters[alphabet[i]] = i
-  end
-  i += 1
+alphabet.each.with_index(1) do |letter, num|
+	letters[letter] = num if needed.include?(letter)
 end
 
 puts letters

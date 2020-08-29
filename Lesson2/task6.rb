@@ -1,8 +1,9 @@
 basket =  Hash.new
 answer = ''
-while answer != 'stop'
+while true
   print 'Product name: '
   product = gets.chomp.to_s
+  break if product == "stop"
   print 'Product price: '
   price = gets.chomp.to_f
   print 'Amount: '
@@ -10,10 +11,7 @@ while answer != 'stop'
 
   #korzina
   basket[product] = {"price" => price, "amount" => amount} 
-
-  puts '' #indent
-  puts "Write 'stop' to finish entering data"
-  answer = gets.chomp.to_s
+  puts "" #indent
 end
 
 total_price = 0.00

@@ -1,16 +1,4 @@
-months = {1  => 31, 
-          2  => 28, 
-          3  => 31, 
-          4  => 30, 
-          5  => 31, 
-          6  => 30, 
-          7  => 31, 
-          8  => 31, 
-          9  => 30, 
-          10 => 31, 
-          11 => 30, 
-          12 => 31
-         }
+months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 puts 'Enter the date in numerical format'
 print 'Day: '
@@ -21,14 +9,9 @@ print 'Year: '
 year = gets.chomp.to_i
 
 #high-year check
-if (year % 4 == 0 && year % 100)
-  months[2] = 29 
+if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+  months[1] = 29 
 end
 
-day_num = 0
-needed = (1..(month - 1)).to_a
-needed.each do |days|
-  day_num += months[days]
-end
-
-puts day_num + day
+day_num = day + months.take(month - 1).sum
+puts day_num

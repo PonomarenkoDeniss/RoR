@@ -1,6 +1,2 @@
-num   = [];
-index = 0;
-while index < 100 do 
-  index += 5;
-  num.push(index)
-end
+num = (10..100).step(5).to_a
+

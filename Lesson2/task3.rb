@@ -1,7 +1,9 @@
-# n default value is 11, reuslt is 89
-def fib(n=11)
-  return n if (0..1).include? n
-  (fib(n-1) + fib(n - 2) ) 
+numbers = [0, 1]
+
+loop do 
+	n_num = numbers.last(2).sum
+	break if n_num > 100
+	numbers.push(n_num)
 end
 
-puts fib(11)
+puts numbers

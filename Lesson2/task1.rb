@@ -12,8 +12,6 @@ months = {'January'   => 31,
           'December'  => 31
          } 
 
-months.each do |key, value|
-  if value == 30 
-  	puts key
-  end
+months.each do |month, days|
+  puts month if days == 30
 end
