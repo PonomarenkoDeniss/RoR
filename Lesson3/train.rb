@@ -1,19 +1,18 @@
+require_relative 'route'
 class Train
 
-	attr_writer :speed
-	attr_reader :speed
+  attr_writer :speed
+  attr_reader :speed
 
-	attr_reader :carriage
+  attr_reader :carriage
 
-	#type - freight, landind.
-	def initialize(number, type, amount)
-		@train_number = number
-		@train_type   = type
-		@carriage     = amount
-		@speed        = 0
-
-		puts "Train number - #{@train_number}"
-	end
+  #type - freight, landind.
+  def initialize(number, type, amount)
+    @train_number = number
+    @train_type   = type
+    @carriage     = amount
+    @speed        = 0
+  end
 
 	def stop
 		@speed = 0
@@ -34,8 +33,27 @@ class Train
 		end
 	end
 
+  def start_route(route)
+    @route = route
+    @stantion = @station_list[0]
+  end
+
+  def next_stantion
+    @route.station_list[@stantion + 1]    
+  end
+
+  def prev_stantion
+    @route.station_list[@stantion - 1]
+  end
+
 end
 
 train = Train.new('701-743', 'freight', 5)
-train.speed = 60
+train.speed = 0
 puts train.speed
+train.carriage_add
+
+route = Route.new('Riga', 'Moskow')
+
+train.start_route(route)
+
