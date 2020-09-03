@@ -14,24 +14,24 @@ class Train
     @speed        = 0
   end
 
-	def stop
-		@speed = 0
-		puts 'The train stopped'
-	end
+  def stop
+    @speed = 0
+    puts 'The train stopped'
+  end
 
-	def carriage_add(add = true)
-		if (@speed == 0)
-			if(add)
-				@carriage += 1
-				puts 'Added one carriage'
-			else
-				@carriage -= 1
-				puts 'Decrease one carriage'
-			end
-		else
-			puts 'Stop train pls'
-		end
-	end
+  def carriage_add(add = true)
+    if (@speed == 0)
+      if(add)
+        @carriage += 1
+        puts 'Added one carriage'
+      else
+        @carriage -= 1
+        puts 'Decrease one carriage'
+      end
+    else
+    	puts 'Stop train pls'
+    end
+  end
 
   def start_route(route)
     @route = route
